@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "widget": {
+    "formlyConfig": {
+      "type": "stepper-type"
+    }
+  },
+  "properties": {
+    "imposta": {
+      "type": "object",
+      "title": "newRequest.setting.title",
+      "properties": {
+        "selezionaUser": {
+          "type": "object",
+          "title": "Seleziona l'user",
+          "widget": {
+            "formlyConfig": {
+              "type": "user-type"
+            }
+          },
+          "properties": {
+            "user": {
+              "$ref": "#/definitions/User",
+              "widget": {
+                "formlyConfig": {
+                  "templateOptions": {
+                    "helpText": "Si consiglia"
+                  }
+                }
+              }
+            }
+          },
+          "required": ["user"]
+        }
+      },
+      "required": ["selezionaUser"]
+    }
+  },
+  "additionalProperties": true,
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "string"
+        },
+        "mail": {
+          "type": "number"
+        },
+        "codiceFiscale": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "account",
+        "mail",
+        "codiceFiscale"
+      ]
+    }
+  }
+}

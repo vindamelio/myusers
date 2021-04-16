@@ -1,0 +1,32 @@
+<div class="diva">
+<div>
+  <button type="button" class="ml-3"  (click)="fireChildUser()">UserSend</button>
+  {{ stringa }} | {{ stringaAccount }} | {{ stringaMail }} | {{ stringOne }} | {{ stringChanged }}
+</div>
+
+<div>
+<form #formModelCheck="ngForm">
+    <div class="spacing">
+      <input [(ngModel)]="importedUser.id" type="text" id="id" required name="id" required #id="ngModel"/>
+      <label for="id">:id</label>
+    </div>
+    <div class="spacing">
+      <input [(ngModel)]="importedUser.account" type="text" id="account" required name="account" required #account="ngModel"/>
+      <label for="account">:Account</label>
+      <span [hidden]="account.valid||account.pristine">Il account inserito non è valido o non è presente</span>
+    </div>
+    <div class="spacing">
+      <input [(ngModel)]="importedUser.mail" type="text" id="mail" required name="mail" required #mail="ngModel"/>
+      <label for="mail">:Mail</label>
+      <span [hidden]="mail.valid||mail.pristine">Il mail inserito non è valido o non è presente</span>
+    </div>
+  
+    <button type="button" class="ml-3" [disabled]="!formModelCheck.valid" (click)="sendData()">Invia</button>
+  </form>
+
+  <button type="button" class="ml-3"  (click)="resetData()">Reset</button>
+  <button type="button" class="ml-3"  (click)="deleteData()">Delete</button>
+  <button type="button" class="ml-3"  (click)="printUser()">Console</button>
+</div>
+
+</div>

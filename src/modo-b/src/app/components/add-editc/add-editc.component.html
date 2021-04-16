@@ -1,0 +1,33 @@
+<div class="divc">
+  <div>
+      <button type="button" class="ml-3"  (click)="fireChildUser()">UserSend</button>
+      {{ stringc }}
+  </div>
+
+  <div>
+    <div>
+    <!-- <form> -->
+      <div>
+        <input type="text" id="cid" [formControl]="cfavoriteColorControlId"  />
+        <label for="cid">:id</label>
+      </div>
+      <div>  
+        <input type="text" id="caccount" [formControl]="cfavoriteColorControlAccount"  />
+        <label for="caccount">:Account</label>
+      </div>
+      <div>
+        <input type="text" id="cmail" [formControl]="cfavoriteColorControlMail"  />
+        <label for="cmail">:Mail</label>
+      </div>      
+
+      <!-- </form> -->
+      <!--<button type="button" class="ml-3" [disabled]="!myForm.valid" (click)="sendData2()">Invia</button> -->
+      <button type="button" class="ml-3"  (click)="sendData3()">Invia</button>
+    </div>
+      <button type="button" class="ml-3"  (click)="resetData3()">Reset</button>
+      <button type="button" class="ml-3"  (click)="deleteData()">Delete</button>
+      <button type="button" class="ml-3"  (click)="printUser()">Console</button>
+      <button type="button" class="ml-3"  (click)="updateValue()">Update</button>
+   </div>
+
+</div>

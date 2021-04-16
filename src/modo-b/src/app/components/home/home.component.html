@@ -1,0 +1,73 @@
+<div>
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <div class="container">
+        <div class="row">
+            <nav>
+                <p>
+                  <a routerLink="/home" routerLinkActive="active"> Link verso Home</a>
+                </p>
+            </nav>          
+        </div>
+        <div  class="row">
+            <button type="button" class="ml-3"  (click)="printHome()">Console</button>
+        </div>
+
+        <div class="row">
+            <app-add-edit [parentUser]="user"   (childUser)="messageFromUser=$event"   ></app-add-edit>
+            <h1>{{messageFromUser}}</h1>
+        </div>
+
+        <div class="row">
+            <app-add-editb [parentUserb]="user"   (childUserb)="messageFromUserb=$event"   ></app-add-editb>
+            <h1>{{messageFromUserb}}</h1>
+        </div>
+
+        <div class="row">
+            <app-add-editc [parentUserc]="user"   (childUserc)="messageFromUserc=$event"   ></app-add-editc>
+            <h1>{{messageFromUserc}}</h1>
+        </div>
+
+        <div class="row">
+            <app-add-editd [parentUserd]="user"   (childUserd)="messageFromUserd=$event"   ></app-add-editd>
+            <h1>{{messageFromUserd}}</h1>
+        </div>
+
+        <div class="row">
+            <app-add-edite [parentUsere]="user"   (childUsere)="messageFromUsere=$event"   ></app-add-editd>
+            <!--
+            <app-add-edite 
+                [parentUsere]="user"   
+                (childUsere)="messageFromUsere=$event"   
+                [isShowNewItemForm]="isShowNewItemForm"
+                [newItemForm]="newItemForm"
+                (handleSubmit)="onSubmit()"
+                (handleCancelForm)="cancelForm()"
+                (handleShowNewItemForm)="showNewItemForm()"
+            
+            ></app-add-edite>
+            -->
+            <h1>{{messageFromUsere}}</h1>
+        </div>
+
+        <div class="row">
+            <app-lista [parentList]="userList"  (childList)="messageFromList=$event" ></app-lista>
+            <h1>{{messageFromList}}</h1>
+        </div>
+
+        <div class="row">
+            <app-listb [parentList]="userList"  (childList)="messageFromList=$event" ></app-listb>
+            <!--
+            <app-listb 
+                [editItemUrl]="editItemUrl"
+                [list$]="list$"
+                (handleRemoveItem)="removeItem($event)" 
+                ></app-listb>
+            -->
+            <h1>{{messageFromList}}</h1>
+        </div>
+
+
+    </div>
+</div>

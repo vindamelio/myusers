@@ -1,0 +1,19 @@
+<div>
+  <button type="button" class="ml-3"  (click)="fireChildList()">ListSend</button>
+</div>
+<div class="contaner">
+  
+    <div class="mt-3">
+      <h1 *ngIf="!importedUserList.length" >Nessuna account presente</h1>
+      <div *ngIf="error">
+        <h1>Ops! C'è stato un errore...</h1>
+        <h2>{{error}}</h2>
+      </div>      
+      
+      <ul *ngFor="let user of importedUserList">
+        <li (click)="navigate(user.id)">{{user.id}}-{{user.account}}-{{user.mail}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

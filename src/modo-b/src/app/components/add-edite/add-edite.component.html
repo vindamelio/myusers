@@ -1,0 +1,34 @@
+<div class="dive">
+    <div>
+      <button type="button" class="ml-3"  (click)="fireChildUser()">UserSend</button>
+      {{ stringe }}
+    </div>
+
+    <div>
+        <form [formGroup]="newItemForm">
+          <div class="spacing">
+              <input type="text" id="eid" required formControlName="eid"  />
+              <label for="eid">:id</label>
+          </div>    
+          <div class="spacing">
+            <input type="text" id="eaccount" required formControlName="eaccount" />
+            <label for="eaccount">:Account</label>
+            <span [hidden]="newItemForm.controls.eaccount.valid||newItemForm.controls.eaccount.pristine">Il account inserito non è valido o non è presente</span>
+          </div>
+          <div class="spacing">
+            <input type="text" id="email" required formControlName="email"  />
+            <label for="email">:Mail</label>
+            <span [hidden]="newItemForm.controls.email.valid||newItemForm.controls.email.pristine">Il mail inserito non è valido o non è presente</span>
+          </div>
+          <button type="button" class="ml-3" [disabled]="!newItemForm.valid" (click)="sendData5()">Invia</button>
+        </form>
+      
+        <button type="button" class="ml-3"  (click)="resetData5()">Reset</button>
+        <button type="button" class="ml-3"  (click)="deleteData()">Delete</button>
+        <button type="button" class="ml-3"  (click)="printUser()">Console</button>
+        <button type="button" class="ml-3"  (click)="updateValue()">Update</button>
+  
+    </div>
+
+
+</div>

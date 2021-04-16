@@ -1,0 +1,33 @@
+<div class="divb">
+    <div>
+      <button type="button" class="ml-3"  (click)="fireChildUser()">UserSend</button>
+      {{ stringb }}
+    </div>
+        
+    <div>
+      <form [formGroup]="myForm">
+        <div class="spacing">
+            <input type="text" id="bid" required formControlName="bid"  />
+            <label for="bid">:id</label>
+        </div>    
+        <div class="spacing">
+          <input type="text" id="baccount" required formControlName="baccount" />
+          <label for="baccount">:Account</label>
+          <span [hidden]="myForm.controls.baccount.valid||myForm.controls.baccount.pristine">Il account inserito non è valido o non è presente</span>
+        </div>
+        <div class="spacing">
+          <input type="text" id="bmail" required formControlName="bmail"  />
+          <label for="bmail">:Mail</label>
+          <span [hidden]="myForm.controls.bmail.valid||myForm.controls.bmail.pristine">Il mail inserito non è valido o non è presente</span>
+        </div>
+        <button type="button" class="ml-3" [disabled]="!myForm.valid" (click)="sendData2()">Invia</button>
+      </form>
+    
+      <button type="button" class="ml-3"  (click)="resetData2()">Reset</button>
+      <button type="button" class="ml-3"  (click)="deleteData()">Delete</button>
+      <button type="button" class="ml-3"  (click)="printUser()">Console</button>
+      <button type="button" class="ml-3"  (click)="updateValue()">Update</button>
+
+    </div>
+        
+  </div>

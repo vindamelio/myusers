@@ -1,0 +1,31 @@
+{
+"myFields":  [
+    {
+      "key": "did",
+      "type": "input",
+      "templateOptions": {
+        "label": "id",
+        "placeholder": "Enter id",
+        "required": true
+      }
+    },
+    {
+        "key": "dAccount",
+        "type": "input",
+        "templateOptions": {
+            "label": "Account",
+            "placeholder": "Enter Account",
+            "required": true
+      }
+    },
+    {
+        "key": "dMail",
+        "type": "input",
+        "templateOptions": {
+            "label": "Mail",
+            "placeholder": "Enter Mail",
+            "required": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<div>
+  <button type="button" class="ml-3"  (click)="fireChildUser()">UserSend</button>
+</div>
+
+<div>
+<form #formModelCheck="ngForm">
+    <input [(ngModel)]="importedUser.id" type="text" id="id" required name="id" required #id="ngModel"/>
+
+    <div class="spacing">
+      <label for="account">Account:</label>
+      <input [(ngModel)]="importedUser.account" type="text" id="account" required name="account" required #account="ngModel"/>
+      <span [hidden]="account.valid||account.pristine">Il account inserito non è valido o non è presente</span>
+    </div>
+    <div class="spacing">
+      <label for="mail">Mail:</label>
+      <input [(ngModel)]="importedUser.mail" type="text" id="mail" required name="mail" required #mail="ngModel"/>
+      <span [hidden]="mail.valid||mail.pristine">Il mail inserito non è valido o non è presente</span>
+    </div>
+  
+    <button type="button" class="ml-3" [disabled]="!formModelCheck.valid" (click)="sendData()">Invia</button>
+  </form>
+
+  <button type="button" class="ml-3"  (click)="resetData()">Reset</button>
+</div>
+
+<div>
+  <form [formGroup]="myForm">
+    <div class="spacing">
+      <label for="account">Account:</label>
+      <input type="text" id="account" required formControlName="account"/>
+      <span [hidden]="myForm.controls.account.valid||myForm.controls.account.pristine">Il account inserito non è valido o non è presente</span>
+    </div>
+    <div class="spacing">
+      <label for="mail">Mail:</label>
+      <input type="text" id="mail" required formControlName="mail"/>
+      <span [hidden]="myForm.controls.mail.valid||myForm.controls.mail.pristine">Il mail inserito non è valido o non è presente</span>
+    </div>
+    <button type="button" class="ml-3" [disabled]="!myForm.valid" (click)="sendData2()">Invia</button>
+  </form>
+
+  <button type="button" class="ml-3"  (click)="resetData2()">Reset</button>
+</div>
+
+<div>
+  <button type="button" class="ml-3"  (click)="deleteData()">Delete</button>
+  <button type="button" class="ml-3"  (click)="printUser()">Console</button>
+</div>
