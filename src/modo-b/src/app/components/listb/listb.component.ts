@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Select, Store } from "@ngxs/store";
 import { from, of, Observable } from 'rxjs';
@@ -20,6 +21,9 @@ import { GetUsers, GetUser, CreateUser, UpdateUser, DeleteUser } from '../../mod
 
 
 export class ListbComponent implements OnInit {
+
+  @Input('parentList') public importedUserList:User[]=[];
+  @Output() public childList = new EventEmitter();
 
   @Select(StatoModule.getUserList)
   list$: Observable<User[]> | undefined;

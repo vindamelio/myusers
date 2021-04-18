@@ -102,6 +102,9 @@ export class AddEditeComponent implements OnInit {
     this.router.navigate(["/home"]);
   }
 
+  public updateValue(){
+
+  }
 
   public printUser(){
     
